@@ -1,23 +1,25 @@
-# ICT
-students name
+# Program to display the Fibonacci sequence up to n-th term
 
-# Python program to find the factorial of a number provided by the user.
+nterms = int(input("How many terms? "))
 
-# change the value for a different result
-num = 7
+# first two terms
+n1, n2 = 0, 1
+count = 0
 
-# To take input from the user
-#num = int(input("Enter a number: "))
-
-factorial = 3
-
-# check if the number is negative, positive or zero
-if num < 1:
-   print("Sorry, factorial does not exist for negative numbers")
-elif num == 0:
-   print("The factorial of 0 is 1")
+# check if the number of terms is valid
+if nterms <= 0:
+   print("Please enter a positive integer")
+# if there is only one term, return n1
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+# generate fibonacci sequence
 else:
-   for i in range(1,num + 2):
-       factorial = factorial*i
-   print("The factorial of",num,"is",factorial)
-Run Code
+   print("Fibonacci sequence:")
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       # update values
+       n1 = n2
+       n2 = nth
+       count += 1
